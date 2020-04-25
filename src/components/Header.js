@@ -17,13 +17,6 @@ class Header extends Component {
         <li><a>Zestful generator</a></li>
       </ul>
     </nav>)
-
-    // return (
-    //   <div className={pageClass}>
-    //     <h2>Page component</h2>
-    //     <span>Go to <Link to="/">Home</Link></span>
-    //   </div>
-    // )
   }
 }
 

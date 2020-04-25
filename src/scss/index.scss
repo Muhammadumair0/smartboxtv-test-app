@@ -1,14 +1,17 @@
-@import '_variables';
+@import "_variables";
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   background: #000;
   font-size: 1em;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

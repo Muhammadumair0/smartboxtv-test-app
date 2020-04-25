@@ -1,2 +1,52 @@
-@import '_variables';
+@import "_variables";
 
+:root {
+  --primary: #141414;
+  --light: #f3f3f3;
+  --dark: #686868;
+}
+
+.link {
+  padding: 50px;
+  display: grid;
+  gap: 20px;
+}
+
+.sub-links ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sub-links a {
+  color: var(--dark);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sub-links a:hover {
+  color: var(--dark);
+  text-decoration: underline;
+}
+
+.logos a {
+  padding: 10px;
+}
+
+.logos a img {
+  width: 36px;
+  height: 24px;
+}
+
+.logo {
+  color: var(--dark);
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--dark);
+  margin: 10px;
+}

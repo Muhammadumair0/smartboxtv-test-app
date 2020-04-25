@@ -70,7 +70,7 @@ class MoviesSlider extends React.Component {
     const { activeSlide, prevSlide, sliderReady } = this.state;
     return (
       <div className={classNames("slider", { "s--ready": sliderReady })}>
-        <p className="slider__top-heading">Media Playlist</p>
+        <p className="slider__top-heading">New Trailers</p>
         <div className="slider__slides">
           {this.state.contents.map((slide, index) => (
             <div
@@ -85,9 +85,9 @@ class MoviesSlider extends React.Component {
                   {slide.title || slide.description}
                 </h3>
                 <h2 className="slider__slide-heading">
-                  {slide.description.split("").map((l) => (
-                    <span>{l}</span>
-                  ))}
+                  {slide.description.split("").map((l, i) => {
+                    return i < 23 && (<span>{i < 22 ? l : '...'}</span>)
+                  })}
                 </h2>
                 <p className="slider__slide-readmore">read more</p>
               </div>
@@ -148,8 +148,8 @@ const MoviesSliderWithSlides = (props) => {
   return <MoviesSlider {...props} slides={slides} />;
 };
 
-const mapStateToProps = (state) =>  {
- return { contents: state.app.contents }
+const mapStateToProps = (state) => {
+  return { contents: state.app.contents }
 };
 
 export default connect(mapStateToProps)(MoviesSliderWithSlides);

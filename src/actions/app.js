@@ -4,7 +4,7 @@ import axios from 'axios'
 import constants from './constants'
 
 
-const CorsUrl = 'http://cors-anywhere.herokuapp.com/';
+const CorsUrl = 'https://cors-anywhere.herokuapp.com/';
 
 export const loadContents = (callback) => async (dispatch) => {  
   const { data } = await axios.get(`${CorsUrl}https://mychannel.nunchee.tv/api/generic/playlists/details/5b845b8346cc29000e4f186a?`);
