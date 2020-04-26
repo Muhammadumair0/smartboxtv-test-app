@@ -1,19 +1,19 @@
 import React from "react";
 import "../scss/Counters.scss";
-import { connect } from 'react-redux';
-
+import { connect } from "react-redux";
+import { app } from "../actions";
 
 class Counters extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      meterHTML: [<MeterGenerator />],
+      meterHTML: [<MeterGenerator {...props} />],
     };
   }
 
   addNewMeter = () => {
     this.setState({
-      meterHTML: [...this.state.meterHTML, <MeterGenerator />],
+      meterHTML: [...this.state.meterHTML, <MeterGenerator {...this.props} />],
     });
   };
 
@@ -35,31 +35,35 @@ class Counters extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return {
-      count: state.count
-    };
-  }
-
+  return state;
+}
 export default connect(mapStateToProps)(Counters);
 
-
 class MeterGenerator extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor(props, key) {
+    super(props, key);
     this.state = {
       value: 0,
     };
   }
 
   increment = () => {
-    this.setState({
-      value: this.state.value + 1,
-    });
+    this.props.dispatch(
+      app.increamentCounter(this._reactInternalFiber.index, (state) => {
+        this.setState({
+          value: state.app["counter-" + this._reactInternalFiber.index],
+        });
+      })
+    );
   };
   decrement = () => {
-    this.setState({
-      value: this.state.value - 1,
-    });
+    this.props.dispatch(
+      app.decreamentCounter(this._reactInternalFiber.index, (state) => {
+        this.setState({
+          value: state.app["counter-" + this._reactInternalFiber.index],
+        });
+      })
+    );
   };
 
   render() {

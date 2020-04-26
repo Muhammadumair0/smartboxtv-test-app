@@ -42,9 +42,7 @@ class MoviesSlider extends React.Component {
         };
       });
 
-      this.setState({ contents }, () => {
-        console.log('this stat', this.state.contents)
-      })
+      this.setState({ contents })
     }))
   }
 

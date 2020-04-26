@@ -4,7 +4,7 @@ const initialState = {
   initialized: false,
   transitions: true,
   counter: 0,
-  data: null,
+  data: null
 }
 
 export default (state = initialState, action) => {
@@ -22,15 +22,25 @@ export default (state = initialState, action) => {
       }
 
     case constants.INCREMENT_COUNTER:
+      if(!initialState[`counter-`+action.data]) {
+        initialState[`counter-`+action.data] = 1;
+        state[`counter-`+action.data] = 0;
+      }
+      state[`counter-`+action.data] = Number(state[`counter-`+action.data]) + 1;
       return {
         ...state,
-        counter: state.counter + 1,
+        [`counter-`+action.data]: (state[`counter-`+action.data]).toString(),
       }
 
     case constants.DECREMENT_COUNTER:
+      if(!initialState[`counter-`+action.data]) {
+        initialState[`counter-`+action.data] = -1;
+        state[`counter-`+action.data] = 0;
+      }
+      state[`counter-`+action.data] = Number(state[`counter-`+action.data]) - 1;
       return {
         ...state,
-        counter: state.counter - 1,
+        [`counter-`+action.data]: (state[`counter-`+action.data]).toString(),
       }
 
     case constants.LOAD_CONTENTS_DETAIL:
