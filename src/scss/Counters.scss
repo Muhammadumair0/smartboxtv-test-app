@@ -1,0 +1,63 @@
+.counters {
+  .counters-button {
+    display: grid;
+    justify-items: center;
+  }
+  .counters-button button {
+    background-color: #9f2039;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    width: 180px;
+    color: #fff;
+    padding: 15px 28px;
+    border: none;
+  }
+  .counters-button button:focus {
+    outline: none;
+  }
+  .wrapper {
+    margin: 0px !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    gap: 30px;
+    margin: 40px auto !important;
+    .counter-wrapper {
+      min-height: 170px;
+      height: 100px;
+      width: 150px;
+      position: relative;
+      text-align: center;
+      background: #9f2039;
+      border-radius: 10px;
+      .counter {
+        color: #fff;
+        font-size: 80px;
+        display: inline-block;
+        margin-top: 8px;
+      }
+      .controls {
+        position: absolute;
+        bottom: 15%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        .decrement {
+          margin-right: 30px;
+        }
+        button {
+          border: 1px solid #ffffff;
+          background: #fff;
+          color: #9f2039;
+          border-radius: 4px;
+          font-size: 18px;
+          outline: none;
+          cursor: pointer;
+          padding: 5px 10px;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}

@@ -13,8 +13,8 @@ class Header extends Component {
     return (<nav>
       <p class="logo">SMARTBOX<span>TV</span></p>
       <ul>
-        <li><a>Playlist</a></li>
-        <li><a>Zestful generator</a></li>
+        <li><Link to={{ pathname: '/contents'}}>Playlist</Link></li>
+        <li><Link to={{ pathname: '/counters'}}>Zestful meter</Link></li>
       </ul>
     </nav>)
   }

@@ -4,7 +4,6 @@ import classNames from "classnames";
 import "../scss/Home.scss";
 import { app } from "../actions";
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
 
 class MoviesSlider extends React.Component {
   constructor(props) {
@@ -34,12 +33,12 @@ class MoviesSlider extends React.Component {
     }, 0);
     this.props.dispatch(app.loadContents((data, corsURL) => {
       const contents = data.data.items.map(item => {
-        let imageObj = item.images.find(image => image.type == 'backdrop');
+        let backdropImage = item.images.find(image => image.type == 'backdrop');
         return {
           id: item._id,
           title: item.title.original,
           description: item.description.plain.original,
-          imageURL: `${corsURL}https://mychannel.nunchee.tv/api/assets/images/view/${imageObj._id}?type=backdrop`
+          imageURL: `${corsURL}https://mychannel.nunchee.tv/api/assets/images/view/${backdropImage._id}?type=backdrop`
         };
       });
 
@@ -89,7 +88,13 @@ class MoviesSlider extends React.Component {
                     return i < 23 && (<span>{i < 22 ? l : '...'}</span>)
                   })}
                 </h2>
-                <p className="slider__slide-readmore">read more</p>
+                <p className="slider__slide-readmore"><Link to={{
+                  pathname: `contents/detail/${slide.id}`,
+                  state: {
+                    slideId: slide.id
+                  }
+                }}
+                >read more</Link></p>
               </div>
               <div className="slider__slide-parts">
                 {[...Array(this.IMAGE_PARTS).fill()].map((x, i) => (
@@ -117,39 +122,7 @@ class MoviesSlider extends React.Component {
   }
 }
 
-const slides = [
-  {
-    city: "Paris",
-    country: "France",
-    img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/paris.jpg",
-  },
-  {
-    city: "Singapore",
-    img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/singapore.jpg",
-  },
-  {
-    city: "Prague",
-    country: "Czech Republic",
-    img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/prague.jpg",
-  },
-  {
-    city: "Amsterdam",
-    country: "Netherlands",
-    img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/amsterdam.jpg",
-  },
-  {
-    city: "Moscow",
-    country: "Russia",
-    img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/moscow.jpg",
-  },
-];
 
-const MoviesSliderWithSlides = (props) => {
-  return <MoviesSlider {...props} slides={slides} />;
-};
+const mapStateToProps = (state) => state;
 
-const mapStateToProps = (state) => {
-  return { contents: state.app.contents }
-};
-
-export default connect(mapStateToProps)(MoviesSliderWithSlides);
+export default connect(mapStateToProps)(MoviesSlider);

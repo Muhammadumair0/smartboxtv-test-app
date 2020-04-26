@@ -5,8 +5,8 @@ export default keyMirror({
   INIT_APP: null,
   RESET_APP: null,
   INCREMENT_COUNTER: null,
+  DECREMENT_COUNTER: null,
   TOGGLE_TRANSITIONS: null,
   LOAD_CONTENTS: null,
-  LOAD_CONTENT_DETAILS: null,
-  LOAD_IMAGE: null
+  LOAD_CONTENTS_DETAIL: null,
 })

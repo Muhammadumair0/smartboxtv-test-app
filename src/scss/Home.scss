@@ -140,7 +140,9 @@
       }
     }
 
-    &-readmore {
+    &-readmore  a {
+      text-decoration: none;
+      color: inherit;
       position: relative;
       font-size: 14px;
       text-transform: lowercase;

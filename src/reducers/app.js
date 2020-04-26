@@ -27,10 +27,16 @@ export default (state = initialState, action) => {
         counter: state.counter + 1,
       }
 
-    case constants.TOGGLE_TRANSITIONS:
+    case constants.DECREMENT_COUNTER:
       return {
         ...state,
-        transitions: !state.transitions,
+        counter: state.counter - 1,
+      }
+
+    case constants.LOAD_CONTENTS_DETAIL:
+      return {
+        ...state,
+        [`content-${action.data._id}`]: action.data,
       }
 
     case constants.LOAD_CONTENTS:
