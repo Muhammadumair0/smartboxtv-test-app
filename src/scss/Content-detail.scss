@@ -1,7 +1,4 @@
-$main: #252529;
-$secondary: #8b8b9f;
-$highlight: #73e298;
-$white: #ffffff;
+@import '_variables';
 
 .clearfix:before,
 .clearfix:after {
@@ -108,7 +105,8 @@ h6 {
       }
     }
     .description {
-      color: #bbbebf;
+      // color: #bbbebf;
+      color:$white;
       font-size: 1em;
       line-height: 2;
     }

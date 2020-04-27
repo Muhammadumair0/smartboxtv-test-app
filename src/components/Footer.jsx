@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import '../scss/Footer.scss'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import '../scss/Footer.scss';
 import facebookIcon from '../assets/facebook.svg';
-import instagramIcon from '../assets/instagram.svg'
-import twitterIcon from '../assets/twitter.svg'
-import youtubeIcon from '../assets/youtube.svg'
+import instagramIcon from '../assets/instagram.svg';
+import twitterIcon from '../assets/twitter.svg';
+import youtubeIcon from '../assets/youtube.svg';
 
 class Footer extends Component {
   render() {

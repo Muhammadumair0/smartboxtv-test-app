@@ -31,8 +31,8 @@ class MoviesSlider extends React.Component {
     setTimeout(() => {
       this.setState({ activeSlide: 0, sliderReady: true });
     }, 0);
-    this.props.dispatch(app.loadContents((data, corsURL) => {
-      const contents = data.data.items.map(item => {
+    this.props.dispatch(app.loadContents((state, corsURL) => {
+      const contents = state.app.contents.data.items.map(item => {
         let backdropImage = item.images.find(image => image.type == 'backdrop');
         return {
           id: item._id,

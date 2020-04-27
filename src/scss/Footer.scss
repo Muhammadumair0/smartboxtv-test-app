@@ -1,11 +1,5 @@
 @import "_variables";
 
-:root {
-  --primary: #141414;
-  --light: #f3f3f3;
-  --dark: #686868;
-}
-
 .link {
   padding: 50px;
   display: grid;
@@ -21,18 +15,19 @@
 }
 
 .sub-links a {
-  color: var(--dark);
+  color: $darkGrey;
   text-decoration: none;
   cursor: pointer;
 }
 
 .sub-links a:hover {
-  color: var(--dark);
+  color: $darkGrey;
   text-decoration: underline;
 }
 
 .logos a {
   padding: 10px;
+  cursor: pointer;
 }
 
 .logos a img {
@@ -41,12 +36,12 @@
 }
 
 .logo {
-  color: var(--dark);
+  color: $darkGrey;
 }
 
 footer {
   padding: 20px;
   text-align: center;
-  color: var(--dark);
+  color: $darkGrey;
   margin: 10px;
 }

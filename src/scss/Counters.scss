@@ -1,10 +1,12 @@
+@import '_variables';
+
 .counters {
-  .counters-button {
+  &-button {
     display: grid;
     justify-items: center;
   }
-  .counters-button button {
-    background-color: #9f2039;
+  &-button button {
+    background-color: $red;
     border-radius: 3px;
     display: inline-block;
     cursor: pointer;
@@ -13,7 +15,7 @@
     padding: 15px 28px;
     border: none;
   }
-  .counters-button button:focus {
+  &-button button:focus {
     outline: none;
   }
   .wrapper {
@@ -28,7 +30,7 @@
       width: 150px;
       position: relative;
       text-align: center;
-      background: #9f2039;
+      background: $red;
       border-radius: 10px;
       .counter {
         color: #fff;
@@ -49,7 +51,7 @@
         button {
           border: 1px solid #ffffff;
           background: #fff;
-          color: #9f2039;
+          color: $red;
           border-radius: 4px;
           font-size: 18px;
           outline: none;

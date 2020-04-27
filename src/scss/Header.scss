@@ -34,56 +34,7 @@ nav {
     letter-spacing: 0.1em;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
     &:hover {
-      border-color: #db5955;
-    }
-  }
-  i {
-    color: #db5955;
-    transition: all 0.3s;
-    cursor: pointer;
-
-    &:hover {
-      color: darken(#db5955, 5%);
-    }
-  }
-}
-
-.content {
-  display: flex;
-  justify-content: flex-end;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  margin-top: 30px;
-}
-.content-inner {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.text-container {
-  position: relative;
-  z-index: 99;
-  p {
-    font-size: 32px;
-    max-width: 600px;
-    font-family: "Francois One", sans-serif;
-    letter-spacing: 1.5px;
-  }
-  a {
-    color: #db5955;
-    font-size: 18px;
-    display: inline-block;
-    padding: 10px 20px 6px;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid #db5955;
-    i {
-      margin-left: 20px;
+      border-color: $red;
     }
   }
 }

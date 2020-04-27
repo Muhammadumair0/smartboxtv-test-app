@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Route, Switch } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import '../scss/App.scss'
+import '../scss/App.scss';
 
 import Home from './Home'
 import Footer from './Footer'
