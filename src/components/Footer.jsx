@@ -10,14 +10,14 @@ class Footer extends Component {
   render() {
     return (
       <div>
-        <section class="link">
-          <div class="logos">
+        <section className={"link"}>
+          <div className={"logos"}>
             <a><img src={facebookIcon} /></a>
             <a><img src={instagramIcon} /></a>
             <a><img src={twitterIcon} /></a>
             <a><img src={youtubeIcon} /></a>
           </div>
-          <div class="sub-links">
+          <div className={"sub-links"}>
             <ul>
               <li><a>Audio and Subtitles</a></li>
               <li><a>Audio Description</a></li>

@@ -7,7 +7,7 @@ class Header extends Component {
   render() {
 
     return (<nav>
-      <p class="logo">SMARTBOX<span>TV</span></p>
+      <p className={"logo"}>SMARTBOX<span>TV</span></p>
       <ul>
         <li><Link to={{ pathname: '/contents'}}>Playlist</Link></li>
         <li><Link to={{ pathname: '/counters'}}>Zestful meter</Link></li>
