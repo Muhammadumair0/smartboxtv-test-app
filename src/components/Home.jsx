@@ -31,14 +31,14 @@ class MoviesSlider extends React.Component {
     setTimeout(() => {
       this.setState({ activeSlide: 0, sliderReady: true });
     }, 0);
-    this.props.dispatch(app.loadContents((state, corsURL) => {
+    this.props.dispatch(app.loadContents((state) => {
       const contents = state.app.contents.data.items.map(item => {
         let backdropImage = item.images.find(image => image.type == 'backdrop');
         return {
           id: item._id,
           title: item.title.original,
           description: item.description.plain.original,
-          imageURL: `${corsURL}https://mychannel.nunchee.tv/api/assets/images/view/${backdropImage._id}?type=backdrop`
+          imageURL: `https://mychannel.nunchee.tv/api/assets/images/view/${backdropImage._id}?type=backdrop`
         };
       });
 

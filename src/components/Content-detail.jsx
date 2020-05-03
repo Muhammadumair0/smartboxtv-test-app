@@ -14,7 +14,7 @@ class ContentDetail extends Component {
   componentDidMount() {
     const { slideId } = this.props.location.state;
     this.props.dispatch(
-      app.loadContentDetails(slideId, (state, corsURL) => {
+      app.loadContentDetails(slideId, (state) => {
         let data = state.app[`content-${slideId}`];
         let backdropImage = data.images.find(
           (image) => image.type == "backdrop"
@@ -28,10 +28,10 @@ class ContentDetail extends Component {
             id: data._id,
             title: data.title.original,
             description: data.description.plain.original,
-            backdropImage: `${corsURL}https://mychannel.nunchee.tv/api/assets/images/view/${backdropImage._id}?type=backdrop`,
-            squareImage: squareImage
-              ? `${corsURL}https://mychannel.nunchee.tv/api/assets/images/view/${squareImage._id}?type=backdrop`
-              : undefined,
+            backdropImage: `https://mychannel.nunchee.tv/api/assets/images/view/${backdropImage._id}?type=backdrop`,
+            // squareImage: squareImage
+            //   ? `https://mychannel.nunchee.tv/api/assets/images/view/${squareImage._id}?type=square`
+            //   : undefined,
             availableDate: data.available
               ? this.dateUtility(data.available.from)
               : null,
@@ -61,6 +61,7 @@ class ContentDetail extends Component {
       >
         <div id="banner_content_wrapper">
           <div id="poster">
+          {/* square images are missing for some items; using backdrop-image instead */}
             <img
               src={this.state.slideDetail.backdropImage}
               className={"featured_image"}
