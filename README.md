@@ -1,1 +1,1 @@
-# smartboxtv-test-app
+# Awesome CSS animated slider
